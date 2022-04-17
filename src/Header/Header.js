@@ -15,7 +15,7 @@ const Header = () => {
       key={page.id}
       className={`no-underline text-gray-800 font-semibold  ${
         page.name === "Sign up"
-          ? " md:px-7 md:bg-red-500 bg-white py-2 md:text-white rounded-full "
+          ? " md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full "
           : "hover:text-gray-600"
       }`}
       to={`${page.to}`}
