@@ -1,0 +1,5 @@
+.slider-bg {
+  background-image: url(../images/banner.png);
+  width: 100%;
+  background-size: cover;
+}

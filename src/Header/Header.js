@@ -33,7 +33,7 @@ const Header = () => {
               to="/"
               className="text-xl font-bold no-underline text-gray-800 hover:text-gray-600"
             >
-              Jhon Photography
+              Eric Photography
             </Link>
           </div>
           <nav className="hidden md:block space-x-6">{navLinks}</nav>
