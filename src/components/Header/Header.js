@@ -31,9 +31,9 @@ const Header = () => {
           <div className="flex items-center">
             <Link
               to="/"
-              className="text-xl font-bold no-underline text-gray-800 hover:text-gray-600"
+              className="text-2xl font-bold no-underline text-gray-800 hover:text-gray-600"
             >
-              Eric Photography
+              <span className="text-rose-500"> Eric </span> Photography
             </Link>
           </div>
           <nav className="hidden md:block space-x-6">{navLinks}</nav>
