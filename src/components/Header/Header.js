@@ -1,28 +1,58 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user] = useAuthState(auth);
 
-  const pages = [
-    { id: 1, name: "About Me", to: "/about-me" },
-    { id: 2, name: "Blogs", to: "/blogs" },
-    { id: 3, name: "Login", to: "/login" },
-    { id: 4, name: "Sign up", to: "/sign-up" },
-  ];
-  const navLinks = pages.map((page) => (
-    <Link
-      key={page.id}
-      className={`no-underline text-gray-800 font-semibold  ${
-        page.name === "Sign up"
-          ? " md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full "
-          : "hover:text-gray-600"
-      }`}
-      to={`${page.to}`}
-    >
-      {page.name}
-    </Link>
-  ));
+  const navLinks = (
+    <>
+      <Link
+        className="no-underline text-gray-800 font-semibold hover:text-gray-600"
+        to="/about-me"
+      >
+        About Me
+      </Link>
+      <Link
+        className="no-underline text-gray-800 font-semibold hover:text-gray-600"
+        to="/blogs"
+      >
+        Blogs
+      </Link>
+      {!user && (
+        <>
+          <Link
+            className="no-underline text-gray-800 font-semibold hover:text-gray-600"
+            to="/login"
+          >
+            Login
+          </Link>
+          <Link
+            className={
+              "no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full"
+            }
+            to="/sign-up"
+          >
+            Sign up
+          </Link>
+        </>
+      )}
+      {user && (
+        <>
+          <span className="font-bold">{user?.displayName}</span>
+          <button
+            onClick={() => signOut(auth)}
+            className="no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full"
+          >
+            Sign out
+          </button>
+        </>
+      )}
+    </>
+  );
 
   return (
     <div className="shadow-xl">

@@ -1,5 +1,5 @@
-import React from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
@@ -9,26 +9,28 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let from = location.state?.from?.pathname || "/";
-  let errorElement;
-
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
+
     const email = event.target.email.value;
     const password = event.target.password.value;
-    createUserWithEmailAndPassword(email, password);
+    signInWithEmailAndPassword(email, password);
   };
+
+  let from = location.state?.from?.pathname || "/";
+  let errorElement;
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
 
   if (loading) {
     return <Loading></Loading>;
-  }
-
-  if (user) {
-    navigate(from, { replace: true });
   }
 
   if (error) {
@@ -48,12 +50,14 @@ const Login = () => {
       >
         <input
           className="w-full p-4 bg-gray-100 rounded-lg"
+          required
           type="email"
           name="email"
           placeholder="Email"
         />
         <input
           className="w-full p-4 bg-gray-100 rounded-lg"
+          required
           type="password"
           name="password"
           placeholder="Password"
