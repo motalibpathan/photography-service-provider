@@ -54,28 +54,28 @@ const SignUp = () => {
       >
         <input
           required
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           type="text"
           name="name"
           placeholder="name"
         />
         <input
           required
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           type="email"
           name="email"
           placeholder="Email"
         />
         <input
           required
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           type="password"
           name="password"
           placeholder="Password"
         />
         <input
           required
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           type="password"
           name="confirmPassword"
           placeholder="Confirm Password"

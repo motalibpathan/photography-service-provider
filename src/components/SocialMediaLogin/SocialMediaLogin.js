@@ -23,7 +23,7 @@ const SocialMediaLogin = () => {
       </div>
       <button
         onClick={() => signInWithGoogle()}
-        className="w-full p-3 bg-white border-2 rounded-lg flex justify-center items-center"
+        className="w-full p-3 bg-white border-2 rounded-md flex justify-center items-center"
       >
         <img
           className="mr-2"
@@ -33,7 +33,7 @@ const SocialMediaLogin = () => {
         />
         Sign in with google
       </button>
-      <button className="w-full p-3 bg-white border-2 rounded-lg flex justify-center items-center">
+      <button className="w-full p-3 bg-white border-2 rounded-md flex justify-center items-center">
         <img
           className="mr-2"
           width={30}
@@ -42,7 +42,7 @@ const SocialMediaLogin = () => {
         />
         Sign in with Facebook
       </button>
-      <button className="w-full p-3 bg-white border-2 rounded-lg flex justify-center items-center">
+      <button className="w-full p-3 bg-white border-2 rounded-md flex justify-center items-center">
         <img
           className="mr-2"
           width={30}

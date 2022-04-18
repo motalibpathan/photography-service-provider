@@ -66,7 +66,7 @@ const Login = () => {
       >
         <input
           ref={emailRef}
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           required
           type="email"
           name="email"
@@ -74,14 +74,14 @@ const Login = () => {
         />
         <input
           ref={passwordRef}
-          className="w-full p-4 bg-gray-100 rounded-lg"
+          className="w-full p-4 bg-gray-100 rounded-md"
           required
           type="password"
           name="password"
           placeholder="Password"
         />
         <input
-          className="w-full p-4 bg-rose-500 rounded-md text-white"
+          className="w-full p-4 bg-rose-500 rounded-md text-white cursor-pointer"
           type="submit"
           value={"Login"}
         />

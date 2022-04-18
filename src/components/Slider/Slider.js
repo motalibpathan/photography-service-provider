@@ -16,7 +16,7 @@ const Slider = () => {
             world. I offer weeding Photography, Product Photography,Travel
             Photography, Wildlife Photography etc.
           </p>
-          <button className="px-7 bg-rose-500 border-2 border-rose-500 py-2 rounded-full mt-6 hover:bg-transparent hover:-translate-y-2 duration-500">
+          <button className="px-7 bg-rose-500 border-2 border-rose-500 py-2 rounded-md mt-6 hover:bg-transparent hover:-translate-y-2 duration-500">
             Book Now
           </button>
         </div>

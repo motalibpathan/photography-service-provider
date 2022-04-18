@@ -22,7 +22,7 @@ const Service = ({ service }) => {
         <p className="text-2xl font-bold">Price: $ {price}</p>
         <button
           onClick={() => handleCheckOut(id)}
-          className="px-7 bg-rose-500 border-2 border-rose-500 py-2 rounded-full mt-6 hover:bg-transparent hover:-translate-y-2 duration-500 text-white "
+          className="px-7 bg-rose-500 border-2 border-rose-500 py-2 rounded-md mt-6 hover:bg-transparent hover:-translate-y-2 duration-500 text-white "
         >
           Book Now
         </button>

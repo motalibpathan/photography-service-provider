@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
           <Link
             className={
-              "no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full"
+              "no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-md"
             }
             to="/sign-up"
           >
@@ -45,7 +45,7 @@ const Header = () => {
           <span className="font-bold">{user?.displayName}</span>
           <button
             onClick={() => signOut(auth)}
-            className="no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-full"
+            className="no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-md"
           >
             Sign out
           </button>
