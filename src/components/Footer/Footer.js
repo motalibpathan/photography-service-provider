@@ -1,3 +1,10 @@
+import {
+  faFacebook,
+  faInstagram,
+  faPinterest,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Footer = () => {
@@ -34,10 +41,34 @@ const Footer = () => {
               Social Media
             </h1>
             <ul className="space-y-2">
-              <li>Facebook</li>
-              <li>Youtube</li>
-              <li>Instagram</li>
-              <li>Pinterest</li>
+              <li>
+                <FontAwesomeIcon
+                  className="text-2xl mr-2 hover:text-rose-500"
+                  icon={faFacebook}
+                />{" "}
+                Facebook
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  className="text-2xl mr-2 hover:text-rose-500"
+                  icon={faYoutube}
+                />{" "}
+                Youtube
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  className="text-2xl mr-2 hover:text-rose-500"
+                  icon={faInstagram}
+                />{" "}
+                Instagram
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  className="text-2xl mr-2 hover:text-rose-500"
+                  icon={faPinterest}
+                />{" "}
+                Pinterest
+              </li>
             </ul>
           </div>
         </div>
@@ -50,11 +81,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-// Information
-// About us
-// Contact us
-// FAQ
-// Request City
-// Terms & Conditions
-// Privacy Policy
