@@ -90,7 +90,7 @@ const Login = () => {
       <p className="text-center mt-5">
         New to Eric Photography?{" "}
         <button
-          onClick={() => navigate("/sign-up", { state: location.state })}
+          onClick={() => navigate("/signup", { state: location.state })}
           className="text-rose-500 underline"
         >
           Signup

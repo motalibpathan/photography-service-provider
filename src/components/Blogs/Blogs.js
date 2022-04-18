@@ -4,6 +4,17 @@ const Blogs = () => {
   return (
     <div className="md:container mx-auto p-5 min-h-screen">
       <h1 className="my-3 text-xl font-bold">
+        Question: Difference between authorization and authentication
+      </h1>
+      <p>
+        Answer: Authentication means how much resource user can access.
+        Authentication identify who is user. Authorization implementation by the
+        organization what type of or how much resource can use or access an
+        user. Authentication works with passwords, one time pins or other way
+        entered by the user. Authentication is first step for identification a
+        user and then Authorization take place.
+      </p>
+      <h1 className="my-3 text-xl font-bold">
         Question: Why are you using firebase? What other options do you have to
         implement authentication?
       </h1>

@@ -84,7 +84,7 @@ const SignUp = () => {
           placeholder="Confirm Password"
         />
         <input
-          className="w-full p-4 bg-rose-500 rounded-md text-white"
+          className="w-full p-4 bg-rose-500 rounded-md text-white cursor-pointer"
           type="submit"
           value="Sign up"
         />
@@ -93,7 +93,7 @@ const SignUp = () => {
       <p className="text-center mt-5">
         Already have account?{" "}
         <button
-          onClick={() => navigate("/sign-up", { state: location.state })}
+          onClick={() => navigate("/login", { state: location.state })}
           className="text-rose-500 underline"
         >
           Login
