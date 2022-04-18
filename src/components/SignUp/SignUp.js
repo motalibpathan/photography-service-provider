@@ -3,7 +3,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.init";
@@ -17,12 +17,15 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
 
   if (loading || updating) {
     return <Loading></Loading>;
@@ -89,9 +92,12 @@ const SignUp = () => {
       <p className="text-red-500 text-center my-2">{error?.message}</p>
       <p className="text-center mt-5">
         Already have account?{" "}
-        <Link to={"/login"} className="text-rose-500 underline">
+        <button
+          onClick={() => navigate("/sign-up", { state: location.state })}
+          className="text-rose-500 underline"
+        >
           Login
-        </Link>
+        </button>
       </p>
       <SocialMediaLogin />
       <ToastContainer />
