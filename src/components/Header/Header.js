@@ -12,7 +12,7 @@ const Header = () => {
     <>
       <Link
         className="no-underline text-gray-800 font-semibold hover:text-gray-600"
-        to="/about-me"
+        to="/about"
       >
         About Me
       </Link>
@@ -34,7 +34,7 @@ const Header = () => {
             className={
               "no-underline text-gray-800 font-semibold md:px-7 md:bg-rose-500 bg-white py-2 md:text-white rounded-md"
             }
-            to="/sign-up"
+            to="/signup"
           >
             Sign up
           </Link>
