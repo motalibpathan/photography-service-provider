@@ -1,6 +1,10 @@
-import React, { useEffect } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect, useRef } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import SocialMediaLogin from "../SocialMediaLogin/SocialMediaLogin";
@@ -8,17 +12,12 @@ import SocialMediaLogin from "../SocialMediaLogin/SocialMediaLogin";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-    signInWithEmailAndPassword(email, password);
-  };
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   let from = location.state?.from?.pathname || "/";
   let errorElement;
@@ -39,6 +38,23 @@ const Login = () => {
     );
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    signInWithEmailAndPassword(email, password);
+  };
+
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast.success("Sent email!");
+    } else {
+      toast.warn("Please enter your email address!");
+    }
+  };
+
   return (
     <div className="md:container mx-auto w-full p-5 mb-10 min-h-screen">
       <h1 className="text-2xl text-center mt-5 font-bold text-rose-500">
@@ -49,6 +65,7 @@ const Login = () => {
         className="md:w-1/3 w-full mt-10 mx-auto space-y-6"
       >
         <input
+          ref={emailRef}
           className="w-full p-4 bg-gray-100 rounded-lg"
           required
           type="email"
@@ -56,6 +73,7 @@ const Login = () => {
           placeholder="Email"
         />
         <input
+          ref={passwordRef}
           className="w-full p-4 bg-gray-100 rounded-lg"
           required
           type="password"
@@ -75,7 +93,17 @@ const Login = () => {
           Signup
         </Link>
       </p>
+      <p className="text-center mt-3">
+        Forget Password?{" "}
+        <button
+          className="text-red-500 underline"
+          onClick={() => resetPassword()}
+        >
+          Reset Password
+        </button>{" "}
+      </p>
       <SocialMediaLogin />
+      <ToastContainer />
     </div>
   );
 };
