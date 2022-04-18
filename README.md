@@ -1,6 +1,6 @@
 # Eric Photography
 
-## Live site Link [Live Site Link]()
+## Live site Link [https://eric-photography.web.app/](https://eric-photography.web.app/)
 
 ## About this web site
 
