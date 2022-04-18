@@ -1,3 +1,27 @@
+# Eric Photography
+
+## Live site Link [Live Site Link]()
+
+## About this web site
+
+- This is a photographer website.
+- This website has Navbar, slider, Service and Footer section in Home page.
+- It has also Login page and sign up page.
+- User can also sing in with google account.
+- Checkout page is protected route, user can not go this route without login.
+
+## Technologies used in this project
+
+- React JS
+- Tailwind CSS
+- Firebase
+- React Firebase Hooks
+- Font Awesome
+- React Router V6
+- React Toastify
+
+<br/> <br/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

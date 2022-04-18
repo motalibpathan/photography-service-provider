@@ -1,21 +1,24 @@
-import React from "react";
-import {
-  useSignInWithGithub,
-  useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const SocialMediaLogin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
-  if (user) {
-    navigate("/");
-  }
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
+
   return (
     <div className="md:w-1/3 w-full mt-3 mx-auto space-y-6">
+      <p className="text-red-500 text-center">{error?.message}</p>
       <div className="flex items-center">
         <div className="w-1/2 bg-gray-400 h-1"></div>
         <p className="p-3">or</p>

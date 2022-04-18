@@ -4,20 +4,20 @@
     "title": "Traditional Weeding Photography",
     "price": 200.99,
     "img": "https://images.unsplash.com/photo-1576694662383-508e793456c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    "desc": "Providing Full-day or half-day photo shoots with all necessary equipment, Professional camera and lens kits, Professional lighting setup, Single-shooter and multi-shooter options, Photo editing, color correction and retouching "
+    "desc": "Wedding photography is one of the most common and most lucrative forms of professional photography. While demographics and social trends may fluctuate"
   },
   {
     "id": 2,
-    "title": "Vintage Photography",
+    "title": "Product Photography",
     "price": 299.99,
-    "img": "https://images.unsplash.com/photo-1566103422709-e6d8254efeec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dmludGFnZSUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    "desc": "Long time experience, Professional camera and lens kits, Photo library hosting, Professional lighting setup, Photo editing, color correction and retouching"
+    "img": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "desc": "Product photography, or e-commerce photography as it's sometimes known, is basically what it sounds like: photos taken and used on websites and social media platforms to help drive sales of your product or service."
   },
   {
     "id": 3,
     "price": 399.99,
     "title": "Travel Photography",
     "img": "https://images.unsplash.com/photo-1559700488-2c5c100110f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHRyYXZlbCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    "desc": "Proving Full-day or half-day photo shoots with all necessary equipment, Professional camera and lens kits, Professional lighting setup, Photo editing, color correction and retouching "
+    "desc": "Travel photography differs from other subcategories of photography. It is a genre that has few limitations to its image qualifiers, but will also test the photographer to great lengths due to the abundance of challenges faced"
   }
 ]
